@@ -40,11 +40,16 @@ class LineItemsController < ApplicationController
   # POST /line_items
   # POST /line_items.xml
   def create
-    @line_item = LineItem.new(params[:line_item])
+    @cart = current_cart
+    product = Product.find(params[:product_id])
+    @line_item = @cart.add_product(product)
+    #@line_item = @cart.line_items.new(:product => product)
+
+
 
     respond_to do |format|
       if @line_item.save
-        format.html { redirect_to(@line_item, :notice => 'Line item was successfully created.') }
+        format.html { redirect_to(@line_item.cart, :notice => 'Line item was successfully created.') }
         format.xml  { render :xml => @line_item, :status => :created, :location => @line_item }
       else
         format.html { render :action => "new" }
@@ -55,6 +60,7 @@ class LineItemsController < ApplicationController
 
   # PUT /line_items/1
   # PUT /line_items/1.xml
+
   def update
     @line_item = LineItem.find(params[:id])
 

@@ -15,6 +15,7 @@ Gateworks::Application.routes.draw do
 
   match '/login' => "sessions#new", :as => "login"
   match '/logout' => "sessions#destroy", :as => "logout"
+  match '/your_cart' => "carts#your_cart", :as => "your_cart"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

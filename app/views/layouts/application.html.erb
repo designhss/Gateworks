@@ -13,10 +13,12 @@
 <%= link_to "Register", :controller => "welcome", :action => "register" %>
 <%= link_to "Home", :controller => "welcome", :action => "home" %>
 <%= link_to "Create User", new_user_path %>
+<%= link_to "Your Cart", :controller => "carts", :action => "your_cart"  %> |
 
 <div>
      <% if logged_in? %>
         <%= current_user.email %>
+        <%= link_to "Create User", new_user_path %>
         <%= link_to "Logout", logout_path %>
      <% else %>
         <%= link_to "Login", login_path %>
