@@ -29,3 +29,4 @@ class CombineItemsInCart < ActiveRecord::Migration
       end
     end
 end
+

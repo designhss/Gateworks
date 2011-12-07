@@ -5,6 +5,7 @@
   <% for item in @cart.line_items %>
   <li><%= item.quantity %> &times; <%= item.product.name %></li>
   <% end %>
+   Total Price: <%= @cart.total_price %>
 </ul>
 
 
