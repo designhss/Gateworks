@@ -6,7 +6,7 @@ class Cart < ActiveRecord::Base
     if current_item
       current_item.quantity += 1
     else
-      current_item = LineItem.new(:product_id => product.id)
+      current_item = LineItem.new(:product_id => product.id, :quantity => 1 )
       line_items << current_item
     end
     current_item
