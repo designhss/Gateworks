@@ -2,4 +2,8 @@
 db/*.sqlite3
 log/*.log
 tmp/
+<<<<<<< HEAD
 .idea/workspace.xml
+=======
+.idea/workspace.xml
+>>>>>>> 8c0a3a7538fe3d309f586c39464409cac266e682
