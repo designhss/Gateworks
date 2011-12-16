@@ -21,14 +21,14 @@ user = find_by_email(email)
 return user if user && user.authenticated?(password)
 end
 def authenticated?(password)
-self.hashed_password == encrypt(password + "ruby_rocks" + self.salt)
+self.hashed_password == encrypt(password+ "ruby_rocks" +self.salt)
 end
 
   protected
 def encrypt_password
 return if password.blank?
 salt = generate_salt
-self.hashed_password = encrypt(password + "ruby_rocks" + salt)
+self.hashed_password == encrypt(password+ "ruby_rocks" +salt)
 end
 
   def encrypt(string)
